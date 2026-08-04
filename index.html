@@ -94,7 +94,7 @@
   #qr{width:min(78vw,300px);height:min(78vw,300px);margin:0 auto;display:block}
   .btn{margin-top:26px;border:0;border-radius:26px;background:var(--blue);color:#fff;font-size:19px;font-weight:600;padding:14px 30px;cursor:pointer;font-family:inherit}
   .btn:active{transform:scale(.98)}
-  .ride-card{padding:0;overflow:hidden;background:#f4f7f9;display:none}
+  .ride-card{padding:0;overflow:hidden;background:#fafafa;display:none}
   .ride-card.show{display:block;animation:fade .35s ease}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
   .ride-title{font-size:27px;font-weight:700;text-align:center;padding:26px 16px 8px;margin:0}
@@ -147,7 +147,7 @@
       <p class="kv"><b>Fare</b> &nbsp;<span>&euro;32.00</span></p>
       <p class="kv"><b>Valid until</b> &nbsp;<span>05.08.2026, 11:59 PM</span></p>
       <div class="hr" style="margin-top:14px"></div>
-      <div class="showticket" onclick="openJourney()">
+      <div class="showticket" onclick="openJourney('yuliia')">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1478a8" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 8h3v3H8zM13 8h3v3h-3zM8 13h3v3H8zM13 13h3v3h-3z" fill="#1478a8" stroke="none"/></svg>
         Show ticket
       </div>
@@ -169,7 +169,7 @@
       <p class="kv"><b>Fare</b> &nbsp;<span>&euro;32.00</span></p>
       <p class="kv"><b>Valid until</b> &nbsp;<span>05.08.2026, 11:59 PM</span></p>
       <div class="hr" style="margin-top:14px"></div>
-      <div class="showticket" onclick="openJourney()">
+      <div class="showticket" onclick="openJourney('illia')">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1478a8" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 8h3v3H8zM13 8h3v3h-3zM8 13h3v3H8zM13 13h3v3h-3z" fill="#1478a8" stroke="none"/></svg>
         Show ticket
       </div>
@@ -203,7 +203,7 @@
       <p class="label">Validated</p>
       <p class="value">03.08.2026, 17:45</p>
       <p class="label">Ticket holder</p>
-      <p class="value">Yuliia Mazepa</p>
+      <p class="value" id="holder">Yuliia Mazepa</p>
     </section>
 
     <section class="card qr-card" id="qrCard">
@@ -214,33 +214,32 @@
     <section class="card ride-card" id="rideCard">
       <p class="ride-title">Have a safe trip!</p>
       <div class="scene">
-        <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="420" fill="#f7f9fa"/>
+        <svg viewBox="0 0 660 788" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="660" height="788" fill="#fafafa"/>
 
-          <!-- 1. светлая слева: вершина ~x=60, подошва до середины -->
-          <polygon points="-80,420 60,110 200,420" fill="#bcdcef"/>
-          <!-- 4. светлая справа: склон 45°, от середины и до правого края вверх -->
-          <polygon points="200,420 400,60 400,420" fill="#bcdcef"/>
+          <!-- левая светлая гора -->
+          <path d="M 0 244 C 14 214, 30 193, 51 187 C 71 181, 89 185, 101 198 C 113 211, 120 229, 130 250 L 416 788 L 0 788 Z" fill="#c7e2f5"/>
+          <!-- правая светлая гора -->
+          <path d="M 383 501 L 660 38 L 660 788 L 383 788 Z" fill="#c7e2f5"/>
+          <!-- передняя гора + округлый холм справа -->
+          <path d="M 22 788 L 260 422 C 279 414, 302 414, 327 426 L 512 700 C 526 677, 537 651, 551 638 C 561 629, 570 627, 579 630 C 596 635, 607 658, 621 683 L 660 749 L 660 788 Z" fill="#5faac9"/>
 
-          <!-- 2. тёмная большая: от середины -->
-          <polygon points="30,420 195,235 340,420" fill="#5fa3c7"/>
-          <!-- 3. тёмная маленькая правее большой -->
-          <polygon points="300,420 345,330 390,420" fill="#5fa3c7"/>
+          <!-- канат -->
+          <line x1="-8" y1="418" x2="668" y2="222" stroke="#252525" stroke-width="6" stroke-linecap="square"/>
 
-          <line x1="-20" y1="218" x2="420" y2="122" stroke="#3f3f3f" stroke-width="5"/>
-
+          <!-- кабина: точная отрисовка из эталона, едет вдоль каната -->
           <g id="cabin">
             <animateTransform attributeName="transform" type="translate"
-              values="-20,218; 420,122" dur="4s" repeatCount="indefinite" calcMode="linear"/>
+              values="-284,87; 392,-109" dur="4s" repeatCount="indefinite" calcMode="linear"/>
             <g class="body">
               <animateTransform attributeName="transform" type="rotate"
-                values="-2.5 0 2; 2.5 0 2; -2.5 0 2" dur="2.8s" repeatCount="indefinite"/>
-              <rect x="-24" y="-4" width="48" height="7" rx="3.5" fill="#3f3f3f"/>
-              <path d="M-17 34 L0 5 L17 34" fill="none" stroke="#3f3f3f" stroke-width="5"/>
-              <rect x="-33" y="32" width="66" height="42" rx="3" fill="#3f3f3f"/>
-              <rect x="-27" y="38" width="12" height="26" fill="#f7f9fa"/>
-              <rect x="15" y="38" width="12" height="26" fill="#f7f9fa"/>
-              <rect x="-13" y="52" width="26" height="9" fill="#7ec4e0"/>
+                values="-2 276 331; 2 276 331; -2 276 331" dur="2.8s" repeatCount="indefinite"/>
+              <line x1="255" y1="337" x2="297" y2="325" stroke="#252525" stroke-width="10" stroke-linecap="round"/>
+              <path d="M 281 334 L 259 375 M 281 334 L 305 375" fill="none" stroke="#252525" stroke-width="6" stroke-linecap="square"/>
+              <rect x="233" y="381" width="100" height="70" fill="none" stroke="#252525" stroke-width="7" stroke-linejoin="round"/>
+              <line x1="257" y1="384" x2="257" y2="433" stroke="#252525" stroke-width="7"/>
+              <line x1="310" y1="384" x2="310" y2="433" stroke="#252525" stroke-width="7"/>
+              <rect x="233" y="431" width="100" height="20" fill="#252525"/>
             </g>
           </g>
         </svg>
@@ -250,14 +249,20 @@
 </div>
 
 <script>
-  let base = 18*60 + 27;
-  setInterval(() => {
-    base++;
-    const m = String(Math.floor(base/60)).padStart(2,'0');
-    const s = String(base%60).padStart(2,'0');
+  let base = 0, tick = null;
+  function startTimer(){
+    base = 0;
     const el = document.getElementById('timer');
-    if (el) el.textContent = m + ':' + s;
-  }, 1000);
+    if (el) el.textContent = '00:00';
+    clearInterval(tick);
+    tick = setInterval(() => {
+      base++;
+      const m = String(Math.floor(base/60)).padStart(2,'0');
+      const s = String(base%60).padStart(2,'0');
+      const e = document.getElementById('timer');
+      if (e) e.textContent = m + ':' + s;
+    }, 1000);
+  }
 
   function show(id){
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -266,10 +271,18 @@
     document.querySelector('meta[name=theme-color]')
       .setAttribute('content', id === 'journey' ? '#008a2e' : '#ffffff');
   }
-  function openJourney(){
+  const TICKETS = {
+    yuliia: { name: 'Yuliia Mazepa', qr: 'qr.svg' },
+    illia:  { name: 'Illia Fylymonov', qr: 'qr-ilia.svg' }
+  };
+  function openJourney(who){
+    const t = TICKETS[who] || TICKETS.yuliia;
+    document.getElementById('holder').textContent = t.name;
+    document.getElementById('qr').src = t.qr;
     document.getElementById('rideCard').classList.remove('show');
     document.getElementById('qrCard').style.display = '';
     show('journey');
+    startTimer();
   }
   function closeJourney(){ show('list'); }
   function startRide(){
