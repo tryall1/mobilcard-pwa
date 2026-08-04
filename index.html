@@ -217,18 +217,18 @@
         <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
           <rect width="400" height="420" fill="#f7f9fa"/>
 
-          <!-- 2 светлые горы: слева (срезана краем) и справа (уходит за верх) -->
-          <polygon points="-70,420 55,98 175,420" fill="#bcdcef"/>
-          <polygon points="285,420 400,10 470,420" fill="#bcdcef"/>
+          <!-- 1. светлая слева: вершина ~x=60, подошва до середины -->
+          <polygon points="-80,420 60,110 200,420" fill="#bcdcef"/>
+          <!-- 4. светлая справа: склон 45°, от середины и до правого края вверх -->
+          <polygon points="200,420 400,60 400,420" fill="#bcdcef"/>
 
-          <!-- 2 тёмные посередине: большая + маленькая справа -->
-          <polygon points="-25,420 200,242 355,420" fill="#5fa3c7"/>
-          <polygon points="285,420 338,330 395,420" fill="#5fa3c7"/>
+          <!-- 2. тёмная большая: от середины -->
+          <polygon points="30,420 195,235 340,420" fill="#5fa3c7"/>
+          <!-- 3. тёмная маленькая правее большой -->
+          <polygon points="300,420 345,330 390,420" fill="#5fa3c7"/>
 
-          <!-- канат -->
           <line x1="-20" y1="218" x2="420" y2="122" stroke="#3f3f3f" stroke-width="5"/>
 
-          <!-- кабина: едет по канату, качается вокруг точки подвеса -->
           <g id="cabin">
             <animateTransform attributeName="transform" type="translate"
               values="-20,218; 420,122" dur="4s" repeatCount="indefinite" calcMode="linear"/>
