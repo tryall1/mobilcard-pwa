@@ -38,7 +38,8 @@
   .burger{width:26px;height:18px;position:relative;cursor:pointer}
   .burger span{position:absolute;left:0;right:0;height:2.6px;background:var(--blue);border-radius:2px}
   .burger span:nth-child(1){top:0}.burger span:nth-child(2){top:7.6px}.burger span:nth-child(3){top:15.2px}
-  .brand{display:flex;align-items:center;gap:6px;margin-left:12px}
+  .brand{display:flex;align-items:center;gap:9px;margin-left:12px}
+  .brandname{font-size:21px;font-weight:600;color:#3c4043;letter-spacing:-.2px}
   .icons{display:flex;align-items:center;gap:14px}
   .circ{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center}
   .circ.pink{background:#c2007b;color:#fff}
@@ -98,11 +99,9 @@
   .ride-title{font-size:27px;font-weight:700;text-align:center;padding:26px 16px 8px;margin:0}
   .scene{position:relative;width:100%;aspect-ratio:1/1.05;overflow:hidden}
   .scene svg{position:absolute;inset:0;width:100%;height:100%}
-  #cabin{animation:ride 9s linear infinite;transform-box:view-box}
-  @keyframes ride{from{transform:translate(0,0)}to{transform:translate(300px,-150px)}}
-  #cabin .body{transform-origin:center top;animation:sway 2.6s ease-in-out infinite}
+    #cabin .body{transform-origin:center top;animation:sway 2.6s ease-in-out infinite}
   @keyframes sway{0%,100%{transform:rotate(-2.2deg)}50%{transform:rotate(2.2deg)}}
-  @media (prefers-reduced-motion:reduce){#cabin,#cabin .body{animation:none}}
+  @media (prefers-reduced-motion:reduce){#cabin .body{animation:none}}
 </style>
 </head>
 <body>
@@ -112,9 +111,7 @@
   <div class="appbar">
     <div style="display:flex;align-items:center">
       <div class="burger"><span></span><span></span><span></span></div>
-      <div class="brand">
-        <img src="logo.png" alt="Mobilcard" style="height:26px;width:auto;display:block">
-      </div>
+      <div class="brand"><img src="icon-180.png?v=4" alt="" style="width:34px;height:34px;border-radius:9px;display:block"><span class="brandname">südtirolmobil</span></div>
     </div>
     <div class="icons">
       <div class="circ qr">
@@ -223,18 +220,18 @@
           <rect width="400" height="420" fill="#f4f7f9"/>
           <polygon points="60,420 165,120 270,420" fill="#cfe4f2"/>
           <polygon points="250,420 355,150 460,420" fill="#cfe4f2"/>
-          <line x1="-10" y1="330" x2="410" y2="120" stroke="#3f3f3f" stroke-width="4"/>
+          <line x1="-20" y1="345" x2="420" y2="125" stroke="#3f3f3f" stroke-width="4"/>
           <polygon points="120,420 235,215 350,420" fill="#5fa3c7"/>
           <polygon points="300,420 360,300 420,420" fill="#5fa3c7"/>
-          <g id="cabin" transform="translate(0,0)">
-            <g transform="translate(40,300)">
-              <line x1="0" y1="0" x2="0" y2="14" stroke="#3f3f3f" stroke-width="3"/>
-              <path d="M-16 30 L0 14 L16 30" fill="none" stroke="#3f3f3f" stroke-width="3"/>
-              <g class="body">
-                <rect x="-26" y="30" width="52" height="34" rx="3" fill="#3f3f3f"/>
-                <rect x="-20" y="36" width="17" height="16" fill="#f4f7f9"/>
-                <rect x="3" y="36" width="17" height="16" fill="#f4f7f9"/>
-              </g>
+          <g id="cabin">
+            <animateTransform attributeName="transform" type="translate"
+              values="-20,345; 420,125" dur="6s" repeatCount="indefinite" calcMode="linear"/>
+            <line x1="0" y1="0" x2="0" y2="14" stroke="#3f3f3f" stroke-width="3"/>
+            <path d="M-16 30 L0 14 L16 30" fill="none" stroke="#3f3f3f" stroke-width="3"/>
+            <g class="body">
+              <rect x="-26" y="30" width="52" height="34" rx="3" fill="#3f3f3f"/>
+              <rect x="-20" y="36" width="17" height="16" fill="#f4f7f9"/>
+              <rect x="3" y="36" width="17" height="16" fill="#f4f7f9"/>
             </g>
           </g>
         </svg>
