@@ -1,4 +1,4 @@
-const CACHE = 'mobilcard-v1';
+const CACHE = 'mobilcard-v2';
 const ASSETS = ['./', './index.html', './qr.svg', './manifest.webmanifest', './icon-180.png', './icon-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
