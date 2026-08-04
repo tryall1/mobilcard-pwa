@@ -218,20 +218,29 @@
       <div class="scene">
         <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
           <rect width="400" height="420" fill="#f4f7f9"/>
-          <polygon points="60,420 165,120 270,420" fill="#cfe4f2"/>
-          <polygon points="250,420 355,150 460,420" fill="#cfe4f2"/>
-          <line x1="-20" y1="345" x2="420" y2="125" stroke="#3f3f3f" stroke-width="4"/>
-          <polygon points="120,420 235,215 350,420" fill="#5fa3c7"/>
-          <polygon points="300,420 360,300 420,420" fill="#5fa3c7"/>
+
+          <!-- задние светлые склоны: слева срез, справа большой пик -->
+          <polygon points="-10,420 -10,250 90,420" fill="#bcdcef"/>
+          <polygon points="60,420 190,175 320,420" fill="#bcdcef"/>
+          <polygon points="300,420 400,150 410,420" fill="#bcdcef"/>
+
+          <!-- канат: выше и положе -->
+          <line x1="-20" y1="290" x2="420" y2="180" stroke="#3f3f3f" stroke-width="5"/>
+
+          <!-- передние тёмные горы: одна большая + маленькая справа -->
+          <polygon points="70,420 215,255 360,420" fill="#5fa3c7"/>
+          <polygon points="330,420 375,330 420,420" fill="#5fa3c7"/>
+
+          <!-- кабина: крупнее, едет ровно по канату -->
           <g id="cabin">
             <animateTransform attributeName="transform" type="translate"
-              values="-20,345; 420,125" dur="6s" repeatCount="indefinite" calcMode="linear"/>
-            <line x1="0" y1="0" x2="0" y2="14" stroke="#3f3f3f" stroke-width="3"/>
-            <path d="M-16 30 L0 14 L16 30" fill="none" stroke="#3f3f3f" stroke-width="3"/>
+              values="-20,290; 420,180" dur="4s" repeatCount="indefinite" calcMode="linear"/>
+            <line x1="-22" y1="0" x2="22" y2="0" stroke="#3f3f3f" stroke-width="7" stroke-linecap="round"/>
+            <path d="M-24 44 L0 6 L24 44" fill="none" stroke="#3f3f3f" stroke-width="4"/>
             <g class="body">
-              <rect x="-26" y="30" width="52" height="34" rx="3" fill="#3f3f3f"/>
-              <rect x="-20" y="36" width="17" height="16" fill="#f4f7f9"/>
-              <rect x="3" y="36" width="17" height="16" fill="#f4f7f9"/>
+              <rect x="-38" y="42" width="76" height="50" rx="4" fill="#3f3f3f"/>
+              <rect x="-30" y="50" width="26" height="24" fill="#f4f7f9"/>
+              <rect x="4" y="50" width="26" height="24" fill="#f4f7f9"/>
             </g>
           </g>
         </svg>
