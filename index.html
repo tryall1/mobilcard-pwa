@@ -183,7 +183,7 @@
 <div class="screen" id="journey">
   <div class="jwrap">
     <div class="topbar"><button class="close" aria-label="Close" onclick="closeJourney()">&times;</button></div>
-    <h1>Active journey <span id="timer">27:05</span></h1>
+    <h1>Active journey <span id="timer">27:05:00</span></h1>
 
     <section class="card">
       <div class="logo">
@@ -221,7 +221,7 @@
           <!-- кабина: точная отрисовка из эталона, едет вдоль каната -->
           <g id="cabin">
             <animateTransform attributeName="transform" type="translate"
-              values="-284,87; 392,-109" dur="4s" repeatCount="indefinite" calcMode="linear"/>
+              values="-373,108; 470,-136" dur="3s" repeatCount="indefinite" calcMode="linear"/>
             <g class="body">
               <animateTransform attributeName="transform" type="rotate"
                 values="-2 276 331; 2 276 331; -2 276 331" dur="2.8s" repeatCount="indefinite"/>
@@ -246,7 +246,8 @@
   function fmt(sec){
     const h = String(Math.floor(sec/3600)).padStart(2,'0');
     const m = String(Math.floor(sec/60)%60).padStart(2,'0');
-    return h + ':' + m;
+    const s = String(sec%60).padStart(2,'0');
+    return h + ':' + m + ':' + s;
   }
   function startTimer(){
     base = START_SEC;
