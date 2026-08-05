@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Chip icon">
+  <circle cx="64" cy="64" r="52" fill="#ffffff" stroke="#b000a8" stroke-width="4"/>
+  <g fill="none" stroke="#b000a8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="43" y="43" width="42" height="42" rx="0"/>
+    <rect x="52" y="52" width="24" height="24" rx="0"/>
+    <line x1="49" y1="37" x2="49" y2="43"/>
+    <line x1="64" y1="37" x2="64" y2="43"/>
+    <line x1="79" y1="37" x2="79" y2="43"/>
+
+    <line x1="49" y1="85" x2="49" y2="91"/>
+    <line x1="64" y1="85" x2="64" y2="91"/>
+    <line x1="79" y1="85" x2="79" y2="91"/>
+
+    <line x1="37" y1="49" x2="43" y2="49"/>
+    <line x1="37" y1="64" x2="43" y2="64"/>
+    <line x1="37" y1="79" x2="43" y2="79"/>
+
+    <line x1="85" y1="49" x2="91" y2="49"/>
+    <line x1="85" y1="64" x2="91" y2="64"/>
+    <line x1="85" y1="79" x2="91" y2="79"/>
+  </g>
+</svg>
