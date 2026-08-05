@@ -1,21 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Ticket icon">
-  <circle cx="64" cy="64" r="52" fill="#b000a8"/>
+  <circle cx="64" cy="64" r="52" fill="#d2008e"/>
   <g transform="rotate(-45 64 64)">
-    <path d="M34 48
-             H94
-             a6 6 0 0 1 6 6
-             v8
-             a10 10 0 0 0 -10 10
-             a10 10 0 0 0 10 10
-             v8
-             a6 6 0 0 1 -6 6
-             H34
-             a6 6 0 0 1 -6 -6
-             v-8
-             a10 10 0 0 0 10 -10
-             a10 10 0 0 0 -10 -10
-             v-8
-             a6 6 0 0 1 6 -6z"
-          fill="#ffffff"/>
+    <rect x="36" y="48.5" width="56" height="31" rx="6" fill="#ffffff"/>
+    <rect x="74.6" y="48.5" width="2.8" height="31" fill="#d2008e"/>
+    <circle cx="79" cy="48.5" r="7" fill="#d2008e"/>
+    <circle cx="46" cy="79.5" r="7" fill="#d2008e"/>
   </g>
 </svg>
